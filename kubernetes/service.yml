@@ -1,0 +1,36 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "kubspring",
+    "namespace": "default",
+    "selfLink": "/api/v1/namespaces/default/services/kubspring",
+    "uid": "9613a430-33a7-11ea-ac64-5641ef59d9a2",
+    "resourceVersion": "44697",
+    "creationTimestamp": "2020-01-13T12:49:05Z",
+    "labels": {
+      "k8s-app": "kubspring"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "tcp-80-8080-cwfl2",
+        "protocol": "TCP",
+        "port": 80,
+        "targetPort": 8080,
+        "nodePort": 31038
+      }
+    ],
+    "selector": {
+      "k8s-app": "kubspring"
+    },
+    "clusterIP": "172.21.201.82",
+    "type": "NodePort",
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

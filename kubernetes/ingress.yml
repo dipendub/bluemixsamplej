@@ -1,0 +1,14 @@
+ingress.yml 
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: access-spring
+spec:
+  podSelector:
+    matchLabels:
+      run: spring
+  ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            run: access
